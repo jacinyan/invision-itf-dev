@@ -1,4 +1,4 @@
-import './css/style.css'
+import '@styles/index.less'
 
 const Test = () => {
   console.log('Hello world')

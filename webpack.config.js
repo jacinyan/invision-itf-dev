@@ -8,15 +8,35 @@ const { DefinePlugin } = require('webpack')
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+  },
+  resolve: {
+    extensions: ['.js'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@scripts': path.resolve(__dirname, 'src/scripts'),
+    },
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.less$/i,
         use: [
           { loader: 'style-loader' },
           {
