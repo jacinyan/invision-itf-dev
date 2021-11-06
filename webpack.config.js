@@ -25,28 +25,11 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.less$/i,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
-          { loader: 'less-loader' },
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
       },
       {
         test: /\.js$/i,
