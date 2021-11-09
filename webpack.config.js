@@ -3,8 +3,9 @@ const path = require('path')
 // stop the build on linting error
 const ESLintPlugin = require('eslint-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { DefinePlugin } = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -81,6 +82,17 @@ module.exports = {
     new DefinePlugin({
       // quotes required
       BASE_URL: '"./"',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
+          // omit 'to', include globOptions
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
     }),
     new ESLintPlugin(),
   ],

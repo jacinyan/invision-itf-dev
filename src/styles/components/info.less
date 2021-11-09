@@ -1,10 +1,22 @@
 .info {
   /* autoprefixer grid: autoplace */
   display: grid;
-  grid-column-gap: 10px;
-  grid-row-gap: 5px;
+  column-gap: clamp(15px, 2vw, 25px);
+  row-gap: 10px;
 
-  &__content-- {
+  div:first-of-type {
+    grid-area: i1;
+  }
+
+  div:nth-of-type(2) {
+    grid-area: i2;
+  }
+
+  div:nth-of-type(3) {
+    grid-area: i3;
+  }
+
+  &__content--1 {
     grid-area: c1;
   }
 
@@ -14,23 +26,23 @@
 
   @media screen and (max-width: 425px) {
     grid-template-areas:
-      '.'
-      '.'
-      '.'
+      'i1'
+      'i2'
+      'i3'
       'c1'
       'c2';
   }
 
   @media screen and (min-width: 426px) and (max-width: 768px) {
     grid-template-areas:
-      '. .'
-      '. .'
+      'i1 i2'
+      'i1 i3'
       'c1 c2';
   }
 
   @media screen and (min-width: 769px) {
     grid-template-areas:
-      '. . c1'
-      '. . c2';
+      'i1 i2 c1'
+      'i1 i3 c2';
   }
 }

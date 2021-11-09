@@ -1,21 +1,27 @@
 import { importAll } from '@utils/index'
 
+const imgStyles = `width: 100%`
+const wrapperStyles = 'object-fit: cover;'
+
 function fetchImages() {
   const images = importAll(
     require.context('@/assets/images/info', true, /\.(png|jpe?g|svg)$/),
   )
 
-  const fragment = document.createDocumentFragment()
+  const nodes = images.map((image) => {
+    const imgWrapper = document.createElement('div')
+    const img = document.createElement('img')
 
-  console.log(images)
+    img.src = image
+    img.style.cssText += imgStyles
+    imgWrapper.style.cssText += wrapperStyles
 
-  // wrapper.appendChild(img)
+    imgWrapper.appendChild(img)
 
-  // fragment.appendChild(wrapper)
+    return imgWrapper
+  })
 
-  return ''
+  return nodes
 }
-fetchImages()
-// document
-//   .querySelector('.info')
-//   .insertBefore(fetchImages(), document.querySelector('.info__content--1'))
+
+export { fetchImages }
