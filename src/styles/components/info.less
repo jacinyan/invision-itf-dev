@@ -1,8 +1,36 @@
 .info {
   /* autoprefixer grid: autoplace */
   display: grid;
-  transform: all 0.5s;
-  &__title {
-    color: red;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+
+  &__content-- {
+    grid-area: c1;
+  }
+
+  &__content--2 {
+    grid-area: c2;
+  }
+
+  @media screen and (max-width: 425px) {
+    grid-template-areas:
+      '.'
+      '.'
+      '.'
+      'c1'
+      'c2';
+  }
+
+  @media screen and (min-width: 426px) and (max-width: 768px) {
+    grid-template-areas:
+      '. .'
+      '. .'
+      'c1 c2';
+  }
+
+  @media screen and (min-width: 769px) {
+    grid-template-areas:
+      '. . c1'
+      '. . c2';
   }
 }

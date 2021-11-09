@@ -12,9 +12,17 @@ module.exports = {
   },
   plugins: ['prettier'],
   rules: {
+    'import/prefer-default-export': 0,
     'prettier/prettier': 'error',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
   },
   settings: {
     'import/resolver': 'webpack',
