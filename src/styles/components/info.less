@@ -2,7 +2,7 @@
   /* autoprefixer grid: autoplace */
   display: grid;
   column-gap: clamp(15px, 2vw, 25px);
-  row-gap: 10px;
+  row-gap: clamp(15px, 2vw, 25px);
 
   div:first-of-type {
     grid-area: i1;
@@ -34,6 +34,8 @@
   }
 
   @media screen and (min-width: 426px) and (max-width: 768px) {
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
       'i1 i2'
       'i1 i3'
@@ -41,6 +43,8 @@
   }
 
   @media screen and (min-width: 769px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
       'i1 i2 c1'
       'i1 i3 c2';
