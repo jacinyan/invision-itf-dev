@@ -1,8 +1,8 @@
 .info {
   /* autoprefixer grid: autoplace */
   display: grid;
-  column-gap: clamp(15px, 2vw, 25px);
-  row-gap: clamp(15px, 2vw, 25px);
+  column-gap: clamp(15px, 2vw, 24px);
+  row-gap: clamp(15px, 2vw, 20px);
 
   div:first-of-type {
     grid-area: i1;
@@ -16,37 +16,38 @@
     grid-area: i3;
   }
 
-  &__content--1 {
-    grid-area: c1;
-  }
-
-  &__content--2 {
-    grid-area: c2;
+  &__content {
+    grid-area: c;
   }
 
   @media screen and (max-width: 425px) {
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 20%;
     grid-template-areas:
       'i1'
       'i2'
       'i3'
-      'c1'
-      'c2';
+      'c';
+
+    div:first-of-type,
+    div:nth-of-type(2),
+    div:nth-of-type(3) {
+      height: 70vw;
+    }
   }
 
   @media screen and (min-width: 426px) and (max-width: 768px) {
-    // grid-template-columns: repeat(2, 1fr);
-    // grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
       'i1 i2'
       'i1 i3'
-      'c1 c2';
+      'c c';
   }
 
   @media screen and (min-width: 769px) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-      'i1 i2 c1'
-      'i1 i3 c2';
+      'i1 i2 c'
+      'i1 i3 c';
   }
 }

@@ -22,6 +22,7 @@ module.exports = {
       '@scripts': path.resolve(__dirname, 'src/scripts'),
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@utils': path.resolve(__dirname, 'src/utils'),
+      '@data': path.resolve(__dirname, 'src/data'),
     },
   },
   module: {
@@ -67,7 +68,7 @@ module.exports = {
         // if > maxSize, copy-plugin comes in
         parser: {
           dataUrlCondition: {
-            maxSize: 3000 * 1024,
+            maxSize: 4 * 1024,
           },
         },
       },
@@ -103,5 +104,6 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    open: true,
   },
 }
