@@ -1,7 +1,7 @@
 import { infoData } from '@data/components/info'
 
 export function fetchData() {
-  const title = document.createElement('h2')
+  const title = document.createElement('h3')
   const paragraph1 = document.createElement('p')
   const subtitle = document.createElement('h4')
   const paragraph2 = document.createElement('p')

@@ -1,6 +1,6 @@
 import { latestInfo } from '@data/components/latest'
 
-function fetchData() {
+export function fetchData() {
   const title = document.createElement('h4')
   const text = document.createElement('p')
   const button = document.createElement('p')

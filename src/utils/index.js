@@ -49,8 +49,8 @@ function fetchImages(component) {
 
     return imgWrapper
   })
-
   const filteredNodes = _filterByDPR(imageNodes)
+
   const fragment = document.createDocumentFragment()
   filteredNodes.forEach((node) => {
     fragment.appendChild(node)

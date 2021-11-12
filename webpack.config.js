@@ -15,7 +15,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.json', '.js', '.css', '.less'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
       '@styles': path.resolve(__dirname, 'src/styles'),
@@ -70,6 +70,13 @@ module.exports = {
           dataUrlCondition: {
             maxSize: 4 * 1024,
           },
+        },
+      },
+      {
+        test: /\.(ttf|woff2?)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name].[hash:3][ext]',
         },
       },
     ],

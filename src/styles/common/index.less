@@ -9,6 +9,15 @@
 @textColorDark: #494949;
 @textColorDarker: #2e2e2e;
 
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('~@assets/fonts/OpenSans-SemiBold.ttf') format('ttf'),
+    url('~@assets/fonts/OpenSans-Regular.ttf') format('ttf'),
+    url('~@assets/fonts/OpenSans-Light.ttf') format('ttf');
+}
+
 /* clamp(MIN, VAL, MAX) <==> max(MIN, min(VAL, MAX)) */
 html {
   -webkit-box-sizing: border-box;
@@ -26,6 +35,7 @@ html {
 
 body {
   font-size: clamp(14px, 3vw, 16px);
+  font-family: 'Open Sans', sans-serif;
 }
 h1 {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
@@ -45,6 +55,7 @@ h5 {
 
 img {
   width: 100%;
+  // can't remove the height for responsive layout, yet image height differs
   height: 100%;
   object-fit: cover;
 }
@@ -54,11 +65,10 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // TODO, padding-y to be in container or section
+
   padding: 0 calc((100vw - 1200px) / 2);
 }
 
 section {
-  // TODO, padding-x down while viewport up from 0 till a fixed value
-  padding: 13vw 2.5vw;
+  padding: 0 clamp(0px, calc(1200px - 83.333333vw), 25px);
 }
