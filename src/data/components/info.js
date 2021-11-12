@@ -1,8 +1,8 @@
 export const infoData = {
-  title: 'Title',
+  title: "ANSWER YOUR BODY'S NEEDS",
   paragraph1:
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora,quam. Beatae architecto accusantium ipsa dignissimos quibusdam officiis saepe earum quam magnam! Consectetur, neque! Sit fuga dolorum mollitia alias cupiditate nesciunt esse dolorem itaque omnis et repellendus voluptates, doloribus culpa est nulla saepe at explicabo non, autem quia. Est, veritatis esse! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt excepturi optio sunt nisi impedit quos exercitationem, ipsam nemo veritatis. Eius reprehenderit esse et voluptate odit placeat corporis, maxime ipsa? Illo?',
-  subtitle: 'Subtitle',
+    "The way ingredients are sourced affects the way we nourish our bodies. Author Mark Schatzer believes our body naturally devolops an appetite for the foods and nutrients it needs to be healthy, but that artificial flavourings are getting in the way. This can be reversed by focusing on high-quality ingredients and being mindful as your appetite guides you to consume according to your body's needs.",
+  subtitle: 'Be mindful',
   paragraph2:
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum a aliquam et reiciendis corrupti error. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, aliquam.',
+    "Sourcing local or organic food is a good way to start being more mindful about what you're cooking and eating.",
 }

@@ -1,26 +1,6 @@
-import { importAll } from '@utils/index'
 import { infoData } from '@data/components/info'
 
-function fetchAllImages() {
-  const imagePaths = importAll(
-    require.context('@/assets/images/info', true, /\.(png|jpe?g|svg)$/),
-  )
-
-  const arrImages = imagePaths.map((path) => {
-    const imgWrapper = document.createElement('div')
-    const img = document.createElement('img')
-
-    img.src = path
-    img.alt = path
-    imgWrapper.appendChild(img)
-
-    return imgWrapper
-  })
-
-  return arrImages
-}
-
-function fetchData() {
+export function fetchData() {
   const title = document.createElement('h2')
   const paragraph1 = document.createElement('p')
   const subtitle = document.createElement('h4')
@@ -39,5 +19,3 @@ function fetchData() {
 
   return fragment
 }
-
-export { fetchAllImages, fetchData }

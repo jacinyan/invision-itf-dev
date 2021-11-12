@@ -1,11 +1,26 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-else-return */
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 
-export const importAll = (r) => r.keys().map(r)
+function _importAllByComp(component) {
+  const importAll = (r) => r.keys().map(r)
 
-export function filterByDPR(nodes) {
-  console.log(window.devicePixelRatio)
+  switch (component) {
+    case 'info':
+      return importAll(
+        require.context(`@assets/images/info`, true, /\.(png|jpe?g|svg)$/),
+      )
+    case 'latest':
+      return importAll(
+        require.context(`@assets/images/latest`, true, /\.(png|jpe?g|svg)$/),
+      )
+    default:
+      return null
+  }
+}
+
+function _filterByDPR(nodes) {
   const filtered = nodes.filter((node) => {
     const reg = /(\w+)@(\w+)/gi
 
@@ -20,3 +35,28 @@ export function filterByDPR(nodes) {
 
   return filtered
 }
+
+function fetchImages(component) {
+  const imagePaths = _importAllByComp(component)
+
+  const imageNodes = imagePaths.map((path) => {
+    const imgWrapper = document.createElement('div')
+    const img = document.createElement('img')
+
+    img.src = path
+    img.alt = path
+    imgWrapper.appendChild(img)
+
+    return imgWrapper
+  })
+
+  const filteredNodes = _filterByDPR(imageNodes)
+  const fragment = document.createDocumentFragment()
+  filteredNodes.forEach((node) => {
+    fragment.appendChild(node)
+  })
+
+  return fragment
+}
+
+export { fetchImages }
