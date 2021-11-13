@@ -3,10 +3,10 @@
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 
-function _importAllByComp(component) {
+function _importAllByComp(comp) {
   const importAll = (r) => r.keys().map(r)
 
-  switch (component) {
+  switch (comp) {
     case 'info':
       return importAll(
         require.context(`@assets/images/info`, true, /\.(png|jpe?g|svg)$/),
@@ -36,8 +36,9 @@ function _filterByDPR(nodes) {
   return filtered
 }
 
-function fetchImages(component) {
+function fetchImagesWithWrapper(component) {
   const imagePaths = _importAllByComp(component)
+  // console.log(imagePaths)
 
   const imageNodes = imagePaths.map((path) => {
     const imgWrapper = document.createElement('div')
@@ -49,8 +50,9 @@ function fetchImages(component) {
 
     return imgWrapper
   })
-  const filteredNodes = _filterByDPR(imageNodes)
 
+  const filteredNodes = _filterByDPR(imageNodes)
+  // console.log(filteredNodes)
   const fragment = document.createDocumentFragment()
   filteredNodes.forEach((node) => {
     fragment.appendChild(node)
@@ -59,4 +61,4 @@ function fetchImages(component) {
   return fragment
 }
 
-export { fetchImages }
+export { fetchImagesWithWrapper }

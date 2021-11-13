@@ -1,4 +1,4 @@
-export const latestInfo = [
+export const latestData = [
   {
     title: 'Summer Lunch Menu By Mark Best',
     text: "AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer weather and entertaining at home.",

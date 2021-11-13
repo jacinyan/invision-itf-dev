@@ -9,9 +9,21 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: normal;
-  src: url('~@assets/fonts/OpenSans-SemiBold.ttf') format('ttf'),
-    url('~@assets/fonts/OpenSans-Regular.ttf') format('ttf'),
-    url('~@assets/fonts/OpenSans-Light.ttf') format('ttf');
+  src: url('~@assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('~@assets/fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('~@assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
 }
 
 /* clamp(MIN, VAL, MAX) <==> max(MIN, min(VAL, MAX)) */
@@ -34,21 +46,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: @dark;
 }
-h1 {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
-}
-h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-}
-h3 {
-  font-size: clamp(1.2rem, 3.5vw, 1.75rem);
-}
-h4 {
-  font-size: clamp(1rem, 3vw, 1.125rem);
-}
-h5 {
-  font-size: clamp(0.75rem, 2vw, 0.875rem);
-}
 
 img {
   width: 100%;
@@ -67,5 +64,5 @@ img {
 }
 
 section {
-  padding: 0 clamp(0px, calc(1200px - 83.333333vw), 25px);
+  padding: 0 clamp(0px, calc(1200px - (1200vw / 1440) * 100), 25px);
 }
