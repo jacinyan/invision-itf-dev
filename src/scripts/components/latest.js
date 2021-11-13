@@ -1,20 +1,25 @@
+/* eslint-disable no-plusplus */
 import { latestInfo } from '@data/components/latest'
 
 export function fetchData() {
-  const title = document.createElement('h4')
-  const text = document.createElement('p')
-  const button = document.createElement('p')
+  const cards = latestInfo.map((piece) => {
+    const title = document.createElement('h4')
+    const text = document.createElement('p')
+    const link = document.createElement('a')
 
-  title.innerHTML = latestInfo.title
-  text.innerHTML = latestInfo.paragraph1
+    title.innerHTML = piece.title
+    title.classList.add('title')
 
-  button.innerHTML = latestInfo.paragraph2
+    text.innerHTML = piece.text
+    text.classList.add('text')
 
-  const arrContent = Array.of(title, text, button)
-  const fragment = document.createDocumentFragment()
-  arrContent.forEach((item) => {
-    fragment.appendChild(item)
+    link.innerHTML = piece.link
+    link.classList.add('link')
+
+    const card = Array.of(title, text, link)
+
+    return card
   })
 
-  return fragment
+  return cards
 }

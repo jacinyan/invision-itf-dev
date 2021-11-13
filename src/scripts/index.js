@@ -2,34 +2,38 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
 import { fetchData as fetchInfoData } from '@scripts/components/info'
+import { fetchData as fetchLatestData } from '@scripts/components/latest'
 import { fetchImages } from '@utils/index'
-import _ from 'lodash'
+// import _ from 'lodash'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const content = document.querySelector('.info__content')
-  const images = document.querySelector('.info__images')
+  // cache nodes
+  const infoContentWrapper = document.querySelector('.info__content')
+  const infoImageWrapper = document.querySelector('.info__images')
+  const latestCardWrapper = document.querySelector('.latest__cards')
 
+  // info section
   const infoImages = fetchImages('info')
-  images.appendChild(infoImages)
+  infoImageWrapper.appendChild(infoImages)
 
   const infoData = fetchInfoData()
-  content.appendChild(infoData)
+  infoContentWrapper.appendChild(infoData)
+
+  // latest section
+  const latestImages = fetchImages('latest')
+  const latestData = fetchLatestData()
+
+  const latestImageArray = Array.from(latestImages.children)
+  for (let i = 0; i < latestImageArray.length; i++) {
+    const piece = latestData[i]
+    piece.forEach((nodes) => {
+      latestImageArray[i].appendChild(nodes)
+    })
+  }
+
+  const fragment = document.createDocumentFragment()
+  latestImageArray.forEach((arr) => {
+    fragment.appendChild(arr)
+  })
+  latestCardWrapper.appendChild(fragment)
 })
-
-// window.addEventListener(
-//   'resize',
-//   _.debounce(() => {
-//     const imgWrappers = Array.from(
-//       document.querySelector('.info').children,
-//     ).slice(0, -1)
-
-//     const allImages = fetchAllImages()
-//     const filteredImages = filterByDPR(allImages)
-//     const length = imgWrappers.length
-
-//     for (let i = 0; i < length; i++) {
-//       imgWrappers[i].children[0].src = filteredImages[i].children[0].src
-//       imgWrappers[i].children[0].alt = filteredImages[i].children[0].src
-//     }
-//   }, 300),
-// )

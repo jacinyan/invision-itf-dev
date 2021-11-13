@@ -1,3 +1,18 @@
 .latest {
-  display: flex;
+  &__cards {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    @media screen and (min-width: 426px) and(max-width:768px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 769px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+    }
+  }
 }

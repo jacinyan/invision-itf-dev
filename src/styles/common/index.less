@@ -1,13 +1,9 @@
-@primaryColor: #f2682e;
-@secondaryColor: #f2682e;
-@linkHover: #0d97d1;
-@textColorLightest: #e7e9ec;
-@textColorLightest: #e7e9ec;
-@textColorLightGray: #c6c6c6;
-@textColorGray: #8b8b8b;
-@textColorDarkGray: #727272;
-@textColorDark: #494949;
-@textColorDarker: #2e2e2e;
+@primary: #cf1430;
+@secondary: #c2c2c2;
+@light: #ffffff;
+@lightestGray: #f0f0f0;
+@dark: #0e1414;
+@info: #0d97d1;
 
 @font-face {
   font-family: 'Open Sans';
@@ -36,6 +32,7 @@ html {
 body {
   font-size: clamp(14px, 3vw, 16px);
   font-family: 'Open Sans', sans-serif;
+  background-color: @dark;
 }
 h1 {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
@@ -55,7 +52,7 @@ h5 {
 
 img {
   width: 100%;
-  // can't remove the height for responsive layout, yet image height differs
+  // TODO: can't remove the height for responsive layout, yet slight image height discrepancy occurs
   height: 100%;
   object-fit: cover;
 }
