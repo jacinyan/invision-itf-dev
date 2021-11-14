@@ -11,7 +11,7 @@
 
   @media screen and (min-width: 320px) and (max-width: 768px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: auto;
   }
 
   @media screen and (min-width: 769px) {
@@ -62,15 +62,13 @@
   }
 
   &__title {
-    // outline: 1px chocolate dotted;
     position: relative;
     margin: 0 0 calc(39em / 26);
 
-    font-size: clamp(20px, 2vw, 26px);
+    font-size: clamp(18px, 2vw, 26px);
     font-weight: 300;
     letter-spacing: calc((0.5em / 26));
     line-height: calc(36 / 26);
-    // white-space: nowrap;
 
     &::after {
       content: '';
@@ -91,7 +89,6 @@
 
       font-size: clamp(14px, 1.5vw, 18px);
       line-height: calc(30 / 18);
-      // outline: 1px chocolate dotted;
     }
 
     &--2 {
@@ -100,8 +97,6 @@
   }
 
   &__subtitle {
-    // outline: 1px blue dotted;
-
     color: @primary;
     font-size: clamp(12px, 1.25vw, 16px);
     line-height: calc(28 / 16);

@@ -28,4 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const latestFragment = insertImages(latestImages, latestData)
 
   latestCardsEle.appendChild(latestFragment)
+
+  // event binding in latest
+  const latestChildNodes = latestCardsEle.childNodes
+  latestChildNodes.forEach((node) => {
+    const nodeClassName = node.classList.value
+
+    const nodeChildren = node.children
+    const length = nodeChildren.length - 1
+    const nodeLastChild = nodeChildren[length]
+
+    nodeLastChild.addEventListener('click', () => {
+      console.log(`anchor in ${nodeClassName} has been clicked`)
+    })
+  })
 })

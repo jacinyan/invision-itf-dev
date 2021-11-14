@@ -38,7 +38,6 @@ function _filterByDPR(nodes) {
 
 function fetchImagesWithWrapper(component) {
   const imagePaths = _importAllByComp(component)
-  // console.log(imagePaths)
 
   const imageNodes = imagePaths.map((path) => {
     const imgWrapper = document.createElement('div')
@@ -52,7 +51,6 @@ function fetchImagesWithWrapper(component) {
   })
 
   const filteredNodes = _filterByDPR(imageNodes)
-  // console.log(filteredNodes)
   const fragment = document.createDocumentFragment()
   filteredNodes.forEach((node) => {
     fragment.appendChild(node)

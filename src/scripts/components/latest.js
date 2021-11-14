@@ -9,7 +9,7 @@ export function fetchData() {
     const text = document.createElement('p')
     const link = document.createElement('a')
 
-    card.classList.add(`latest__card--${index + 1}`)
+    card.classList.add(`latest__cards--${index + 1}`)
 
     title.innerHTML = piece.title
     title.classList.add('latest__title')

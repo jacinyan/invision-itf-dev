@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
+  // TODO: split prod and dev configs
   mode: 'development',
   entry: './src/main.js',
   output: {
