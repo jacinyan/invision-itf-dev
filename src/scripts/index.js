@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
+import './lib/lightbox2'
 
 import { fetchData as fetchInfoData } from '@scripts/components/info'
 import {
@@ -48,6 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(`anchor in ${nodeClassName} has been clicked`)
     })
   })
-
-  // event binding in info
 })

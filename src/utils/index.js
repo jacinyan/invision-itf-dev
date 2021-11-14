@@ -41,22 +41,21 @@ function fetchImagesWithWrapper(component) {
 
   const imageNodes = imagePaths.map((path) => {
     const imgWrapper = document.createElement('div')
+    const img = document.createElement('img')
 
     if (component === 'info') {
       const anchor = document.createElement('a')
-      const img = document.createElement('img')
 
       img.src = path
       img.alt = path
       anchor.href = path
-      anchor.dataset.lightbox = path
+      anchor.dataset.lightbox = 'info'
 
       anchor.appendChild(img)
       imgWrapper.appendChild(anchor)
       return imgWrapper
     }
 
-    const img = document.createElement('img')
     img.src = path
     img.alt = path
     imgWrapper.appendChild(img)
