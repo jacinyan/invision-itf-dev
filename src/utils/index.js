@@ -41,29 +41,22 @@ function fetchImagesWithWrapper(component) {
 
   const imageNodes = imagePaths.map((path) => {
     const imgWrapper = document.createElement('div')
-    const img = document.createElement('img')
 
     if (component === 'info') {
-      const modal = document.createElement('div')
-      const span = document.createElement('span')
-      const modalContent = document.createElement('img')
-
-      modal.classList.add('modal')
-      span.classList.add('close')
-      span.innerHTML = '&times;'
-      modalContent.classList = 'modal-content'
-
-      modal.appendChild(span)
-      modal.appendChild(modalContent)
+      const anchor = document.createElement('a')
+      const img = document.createElement('img')
 
       img.src = path
       img.alt = path
+      anchor.href = path
+      anchor.dataset.lightbox = path
 
-      imgWrapper.appendChild(img)
-      imgWrapper.appendChild(modal)
+      anchor.appendChild(img)
+      imgWrapper.appendChild(anchor)
       return imgWrapper
     }
 
+    const img = document.createElement('img')
     img.src = path
     img.alt = path
     imgWrapper.appendChild(img)

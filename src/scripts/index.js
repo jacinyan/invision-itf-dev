@@ -50,16 +50,4 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // event binding in info
-  const infoChildNodes = infoImagesEle.childNodes
-
-  infoChildNodes.forEach((node) => {
-    const img = node.firstChild
-    const modal = node.lastChild
-    const modalContent = modal.lastChild
-
-    img.addEventListener('click', () => {
-      modal.style.display = 'block'
-      modalContent.src = img.src
-    })
-  })
 })
