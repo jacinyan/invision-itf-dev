@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
+
 import { fetchData as fetchInfoData } from '@scripts/components/info'
 import {
   fetchData as fetchLatestData,
@@ -12,7 +13,7 @@ import { fetchImagesWithWrapper } from '@utils/index'
 document.addEventListener('DOMContentLoaded', () => {
   // cache nodes
   const infoContentEle = document.querySelector('.info__content')
-  const infoImagesEle = document.querySelector('.info__images')
+  const infoImagesEle = document.querySelector('.info__gallery')
   const latestCardsEle = document.querySelector('.latest__cards')
 
   // info section
@@ -36,7 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const nodeChildren = node.children
     const length = nodeChildren.length - 1
+    const nodeFirstChild = nodeChildren[0]
     const nodeLastChild = nodeChildren[length]
+
+    nodeFirstChild.addEventListener('click', () => {
+      console.log(`image in ${nodeClassName} has been clicked`)
+    })
 
     nodeLastChild.addEventListener('click', () => {
       console.log(`anchor in ${nodeClassName} has been clicked`)

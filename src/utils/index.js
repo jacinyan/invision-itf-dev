@@ -45,6 +45,7 @@ function fetchImagesWithWrapper(component) {
 
     img.src = path
     img.alt = path
+
     imgWrapper.appendChild(img)
 
     return imgWrapper
