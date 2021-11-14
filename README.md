@@ -89,6 +89,6 @@ The browser will be automatically opened after the server has been started, and 
 
 ## TODO
 
-- Deployment
-- Minor layout fixes in the latest section
+- Further review and adjustment on certain responsive design decisions
 - Code splitting for production and development environments with webpack
+- Deployment
