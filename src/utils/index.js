@@ -43,9 +43,29 @@ function fetchImagesWithWrapper(component) {
     const imgWrapper = document.createElement('div')
     const img = document.createElement('img')
 
+    if (component === 'info') {
+      const modal = document.createElement('div')
+      const span = document.createElement('span')
+      const modalContent = document.createElement('img')
+
+      modal.classList.add('modal')
+      span.classList.add('close')
+      span.innerHTML = '&times;'
+      modalContent.classList = 'modal-content'
+
+      modal.appendChild(span)
+      modal.appendChild(modalContent)
+
+      img.src = path
+      img.alt = path
+
+      imgWrapper.appendChild(img)
+      imgWrapper.appendChild(modal)
+      return imgWrapper
+    }
+
     img.src = path
     img.alt = path
-
     imgWrapper.appendChild(img)
 
     return imgWrapper
