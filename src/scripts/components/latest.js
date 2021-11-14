@@ -12,13 +12,13 @@ export function fetchData() {
     card.classList.add(`latest__card--${index + 1}`)
 
     title.innerHTML = piece.title
-    title.classList.add('title')
+    title.classList.add('latest__title')
 
     text.innerHTML = piece.text
-    text.classList.add('text')
+    text.classList.add('latest__text')
 
     link.innerHTML = piece.link
-    link.classList.add('link')
+    link.classList.add('latest__link')
 
     const arr = Array.of(title, text, link)
     arr.forEach((item) => {
