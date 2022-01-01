@@ -10,7 +10,7 @@ import {
 } from '@scripts/components/latest'
 import { fetchImagesWithWrapper } from '@utils/index'
 // import _ from 'lodash'
-
+// test
 document.addEventListener('DOMContentLoaded', () => {
   // cache nodes
   const infoContentEle = document.querySelector('.info__content')
